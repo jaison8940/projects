@@ -1,0 +1,30 @@
+# Project: Project2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = dllmain.o
+LINKOBJ  = dllmain.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -L"C:/SQLAPI/lib" -L"C:/Program Files (x86)/PostgreSQL/10/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" ../../../../../../PostgreSQL/10/lib/libpq.lib ../../../../../../Dev-Cpp/MinGW64/lib/libmysql.a -m32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/SQLAPI/include" -I"C:/Program Files (x86)/Java/jdk1.8.0_211/include/win32" -I"C:/Program Files (x86)/Java/jdk1.8.0_211/include" -I"C:/Program Files (x86)/Apache Software Foundation/Tomcat 8.5_Tomcatt8/webapps/egl/src" -I"C:/Program Files (x86)/PostgreSQL/10/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/SQLAPI/include" -I"C:/Program Files (x86)/Java/jdk1.8.0_211/include/win32" -I"C:/Program Files (x86)/Java/jdk1.8.0_211/include" -I"C:/Program Files (x86)/Apache Software Foundation/Tomcat 8.5_Tomcatt8/webapps/egl/src" -I"C:/Program Files (x86)/PostgreSQL/10/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include"
+BIN      = Project2.dll
+CXXFLAGS = $(CXXINCS) -m32 -DBUILDING_DLL=1
+CFLAGS   = $(INCS) -m32 -DBUILDING_DLL=1
+RM       = rm.exe -f
+DEF      = libProject2.def
+STATIC   = libProject2.a
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN) $(DEF) $(STATIC)
+
+$(BIN): $(LINKOBJ)
+	$(CPP) -shared $(LINKOBJ) -o $(BIN) $(LIBS) -Wl,--output-def,$(DEF),--out-implib,$(STATIC),--add-stdcall-alias
+
+dllmain.o: dllmain.cpp
+	$(CPP) -c dllmain.cpp -o dllmain.o $(CXXFLAGS)

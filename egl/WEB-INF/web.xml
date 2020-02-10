@@ -1,0 +1,34 @@
+<!DOCTYPE web-app  PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+ <servlet>
+  <servlet-name>MiddleServlet</servlet-name>
+  <servlet-class>Middle</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+    <servlet-name>MiddleServlet</servlet-name>
+    <url-pattern>/mid</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>MiddleSupportServlet</servlet-name>
+  <servlet-class>MiddleSupport</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+    <servlet-name>MiddleSupportServlet</servlet-name>
+    <url-pattern>/midsupp</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>DownloadFile</servlet-name>
+  <servlet-class>DownloadFileServlet</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+    <servlet-name>DownloadFile</servlet-name>
+    <url-pattern>/dfs</url-pattern>
+</servlet-mapping>
+
+</web-app>

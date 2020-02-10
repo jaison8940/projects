@@ -1,0 +1,5 @@
+EXPORTS
+    Java_DownloadFileServlet_export = Java_DownloadFileServlet_export@16 @1
+    Java_DownloadFileServlet_export@16 @2
+    Java_Middle_importx = Java_Middle_importx@16 @3
+    Java_Middle_importx@16 @4
