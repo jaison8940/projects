@@ -1,0 +1,32 @@
+from selenium import webdriver
+
+import time  
+
+from selenium.webdriver.common.by import By
+
+from selenium.webdriver.common.keys import Keys 
+
+b = webdriver.Chrome() 
+
+b.get('http://www.skillrack.com/faces/index.xhtml') 
+
+b.find_element_by_link_text('Login').click() 
+
+k = b.find_element_by_id('input_j_id_u')
+
+k.click() 
+
+k.send_keys('ucs16140@rmkec') 
+
+k = b.find_element_by_id('input_j_id_w')
+
+k.send_keys('12345') 
+
+b.find_element_by_id('j_id_y').click() 
+
+#b.find_element_by_link_text('Home').click() 
+
+
+#b.find_element(By.XPATH, '//a[text()="Challenge"]').click()
+
+input("press enter")
