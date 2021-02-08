@@ -1,0 +1,18 @@
+1. create database udr
+// double click on the created database.
+2. create table user_login_details(id int auto_increment primary key, email varchar(25) not null, password varchar(300) not null);
+
+3. create table certification_details(id int auto_increment primary key, employee_name varchar(25) not null,email varchar(25) not null, csp varchar(30) not null, certification_level varchar(25) not null, certification_name varchar(250) not null, certification_id varchar(25) not null, date_of_certification date not null, expiry_date date not null, validity int not null, user_email varchar(30) not null);
+
+4.create table csp(id int auto_increment primary key, csp_name varchar(25) not null)
+
+5. insert into csp(csp_name) values('Aws'),('Azure'),('Gcp')
+
+6. create table certification_names(id int auto_increment primary key, certification_name varchar(250) not null, csp_id int not null)
+
+7. insert into certification_names(certification_name,csp_id) values('AWS Certified Solution Architect Associate',1),('AWS Certified Solution Architect Professional',1),('AWS Certified Developer Associate',1),('AWS Certified Developer Professional',1),('AWS Certified Cloud Practioner',1),('AWS Certified BigData Analytics',1),('AWS Certified Database Specialist',1),('AWS Certified Devops Engineer',1)
+
+8. insert into certification_names(certification_name,csp_id) values('Microsoft Certified Azure Fundamentals',2),('Microsoft Certified Azure Data Fundamentals',2),('Microsoft Certified Azure AI Fundamentals',2),('Microsoft Certified Azure Administrator Associate',2),('Microsoft Certified Azure Developer Associate',2),('Microsoft Certified Azure Database Administrator Associate',2),('Microsoft Certified Azure Solutions Architect Expert',2),('Microsoft Certified DevOps Engineer Expert',2)
+
+9. insert into certification_names(certification_name,csp_id) values('GCP Certified Engineer Associate',3),('GCP Certified Architect Professional',3),('GCP Certified Developer Professional',3),('GCP Certified Data Engineer Professional',3),('GCP Certified DevOps Engineer Professional',3),('GCP Certified Security Engineer Professional',3),('GCP Certified Network Engineer Professional',3),('GCP Certified Machine Learning Engineer Professional',3)
+
